@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 12:43:51 by mbertin           #+#    #+#             */
-/*   Updated: 2022/07/11 13:15:16 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/07/12 09:37:30 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ char	*buffer_without_return_line(char *buffer)
 
 	i = 0;
 	j = 0;
-	// while (buffer[i] != '\n' && buffer[i])
-	// 	i++;
+	while (buffer[i] != '\n' && buffer[i])
+		i++;
 	if (!buffer[i])
 	{
 		free (buffer);
@@ -67,7 +67,7 @@ char	*get_next_line(int fd)
 	line = ft_calloc(sizeof(char), BUFFER_SIZE + 1);
 	if (!line)
 		return (NULL);
-	while (read_value != 0 && !ft_strchr(buffer, '\n'))
+	while (read_value != 0 && !ft_strchr_gnl(buffer, '\n'))
 	{	
 		read_value = read(fd, line, BUFFER_SIZE);
 		if (read_value == -1)
@@ -76,7 +76,7 @@ char	*get_next_line(int fd)
 			return (NULL);
 		}
 		line[read_value] = '\0';
-		buffer = ft_strjoin(buffer, line);
+		buffer = ft_strjoin_gnl(buffer, line);
 	}
 	free (line);
 	line = clean_line(buffer);

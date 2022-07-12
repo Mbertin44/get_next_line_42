@@ -6,23 +6,17 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:02:04 by mbertin           #+#    #+#             */
-<<<<<<< HEAD:srcs/get_next_line_utils.c
-/*   Updated: 2022/07/07 11:57:59 by mbertin          ###   ########.fr       */
-=======
-/*   Updated: 2022/07/06 12:49:28 by mbertin          ###   ########.fr       */
->>>>>>> c3e8836872e2da7b36c7a469fa968816f442c635:get_next_line_utils.c
+/*   Updated: 2022/07/12 09:34:55 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	c = (char)c;
 	if (!s)
 		return (NULL);
@@ -33,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -42,17 +36,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	j = 0;
 	if (!s1)
-<<<<<<< HEAD:srcs/get_next_line_utils.c
 		s1 = (char *)ft_calloc(sizeof(char), 1);
 	if (!s1 || !s2)
 		return (NULL);
 	str = ft_calloc(sizeof(char), (ft_strlen(s1) + ft_strlen(s2) + 1));
-=======
-		s1 = ft_calloc(sizeof(char), 1);
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
->>>>>>> c3e8836872e2da7b36c7a469fa968816f442c635:get_next_line_utils.c
 	if (!str)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -64,10 +51,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		str[i++] = s2[j++];
 	}
-<<<<<<< HEAD:srcs/get_next_line_utils.c
-=======
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
->>>>>>> c3e8836872e2da7b36c7a469fa968816f442c635:get_next_line_utils.c
 	free (s1);
 	return (str);
 }
@@ -77,7 +60,7 @@ size_t	ft_strlen(const char *s)
 	unsigned int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 		i++;
 	return (i);
 }
