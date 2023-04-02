@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/byaliego/42-project-badges/blob/main/badges/get_next_line-bonus.png?raw=true">
+</p>
+
+
 # Projet get_next_line
 
 Le projet get_next_line est un projet de l'école 42 qui consiste à recoder une fonction permettant de lire ligne par ligne un fichier ou l'entrée standard.
