@@ -17,8 +17,8 @@ Pour utiliser la fonction `get_next_line` dans votre projet, vous devez inclure 
 
 La fonction get_next_line retourne :
 
-* La chaîne de caractère si une ligne a été lue avec succès
-* NULL si la fin de fichier a été atteinte
+* Une chaîne de caractère si une ligne a été lue avec succès
+* NULL si la fin du fichier a été atteinte
 * NULL en cas d'erreur
 
 La variable fd correspond au descripteur de fichier pour lequel on souhaite lire une ligne.
